@@ -1,0 +1,15 @@
+# Excludinig folders and files
+
+# FOLDER
+Logs/
+requirements/
+__pycache__/
+
+# FILES
+*.json
+*.sh
+*.swp
+
+# only txt files (avoid to remove requirements.txt)
+brands_to_start.txt
+crontab.txt
