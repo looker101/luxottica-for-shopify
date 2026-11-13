@@ -9,6 +9,7 @@ __pycache__/
 *.json
 *.sh
 *.swp
+*.xlsx
 
 # only txt files (avoid to remove requirements.txt)
 brands_to_start.txt

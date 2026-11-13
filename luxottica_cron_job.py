@@ -528,7 +528,8 @@ class Luxottica_Scraper:
                     ActionChains(self.browser).move_to_element(self.browser.find_element(By.XPATH, "//span/button[contains(text(),'Brands')]")).click().perform()
                     sleep(0.5)
                     # self.browser.get(url)
-                    ActionChains(self.browser).move_to_element(self.browser.find_element(By.XPATH, f"//button[contains(@class, 'BrandButton')]/span[contains(text(), '{brand}')]/parent::button")).click().perform()
+                    # ActionChains(self.browser).move_to_element(self.browser.find_element(By.XPATH, f"//button[contains(@class, 'BrandButton')]/span[contains(text(), '{brand}')]/parent::button")).click().perform()
+                    ActionChains(self.browser).move_to_element(self.browser.find_element(By.XPATH, f"//button[contains(@class, 'BrandButton')]/span[text() ='{brand}']/parent::button")).click().perform()
                     self.wait_until_browsing()
                     sleep(5)
                     if self.browser.current_url == url:
@@ -912,9 +913,9 @@ try:
     if '.exe' in pathofpyfolder.split('\\')[-1]: DEBUG = False
 
     chrome_path = ChromeDriverManager().install()
-    # if 'chromedriver.exe' not in chrome_path:
-    #     chrome_path = str(chrome_path).split('/')[0].strip()
-    #     chrome_path = f'{chrome_path}\\chromedriver.exe'
+    if 'chromedriver.exe' not in chrome_path:
+        chrome_path = str(chrome_path).split('/')[0].strip()
+        chrome_path = f'{chrome_path}\\chromedriver.exe'
 
     # create directories
     if not os.path.exists('requirements'): os.makedirs('requirements')
